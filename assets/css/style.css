@@ -14,13 +14,15 @@ body {
     background-color: #2a607c;
     color: #ffffff;
 }
-
 .header h1 {
     display: inline-block;
     font-size: 48px;
 }
-
-.header h1 .seo {
+h2 {/* moved from bottom */
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+.seo {/* Remove header and h1, this property does not affect those elements*/
     color: #d9dcd6;
 }
 
@@ -31,10 +33,7 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
 }
-
-.header div ul {
-    list-style-type: none;
-}
+/* removed list-style-type property, no effect on .header div or ul */
 
 .header div ul li {
     display: inline-block;
@@ -85,73 +84,40 @@ p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #2589bd;
 }
-
-.benefit-lead {
-    margin-bottom: 32px;
-    color: #ffffff;
-}
-
-.benefit-brand {
-    margin-bottom: 32px;
-    color: #ffffff;
-}
-
+/* combine like classes, allow intended "center" attribute to work */
+/* Note combining other elements with like attributes was unsuccessful */
+.benefit-lead,
+.benefit-brand,
 .benefit-cost {
     margin-bottom: 32px;
     color: #ffffff;
-}
-
-.benefit-lead h3 {
-    margin-bottom: 10px;
     text-align: center;
-}
-
-.benefit-brand h3 {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.benefit-cost h3 {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.benefit-lead img {
     display: block;
+}
+h3 {
+     margin-bottom: 10px;
+    text-align: center;
+}
+/* The following 3 similar classes would not consolidate all their attributes
+    without severe impact to the webpage. The ones that would were added to above block*/
+.benefit-lead img { 
     margin: 10px auto;
     max-width: 150px;
 }
 
 .benefit-brand img {
-    display: block;
     margin: 10px auto;
     max-width: 150px;
 }
 
 .benefit-cost img {
-    display: block;
     margin: 10px auto;
     max-width: 150px;
 }
-
-.search-engine-optimization {
-    margin-bottom: 20px;
-    padding: 50px;
-    height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #0072bb;
-    color: #ffffff;
-}
-
-.online-reputation-management {
-    margin-bottom: 20px;
-    padding: 50px;
-    height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #0072bb;
-    color: #ffffff;
-}
-
+/* these classes combined all but 1 similar attributes without 
+    affecting the page */
+.search-engine-optimization,
+.online-reputation-management,
 .social-media-marketing {
     margin-bottom: 20px;
     padding: 50px;
@@ -159,42 +125,26 @@ p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #0072bb;
     color: #ffffff;
-}
-
-.search-engine-optimization img {
-    max-height: 200px;
-}
-
-.online-reputation-management img {
-    max-height: 200px;
-}
-
-.social-media-marketing img {
-    max-height: 200px;
-}
-
-.search-engine-optimization h2 {
-    margin-bottom: 20px;
     font-size: 36px;
 }
-
-.online-reputation-management h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
+/*This element needed it's own block separate from the 3 classes following it*/
+img {
+    max-height: 200px;
 }
-
-.social-media-marketing h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
+/* consolidated blocks: this attribute would not combine without affecting
+     the final outcome */
+.search-engine-optimization
+.online-reputation-management
+.social-media-marketing { 
+    max-height: 200px;
 }
-
+/* add font size to footer, moved h2 to top */
 .footer {
     padding: 30px;
     clear: both;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
-}
-
-.footer h2 {
     font-size: 20px;
 }
+/* footer header element needed sequentialized */
+h4 {font-size: 20px;}
